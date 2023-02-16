@@ -1,0 +1,32 @@
+<div class="container">
+    <div>
+        <h2>Demander congé</h2>
+    </div>
+    <form>
+<!--         <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Nom</label>
+            <input type="text" [(ngModel)]="newConge.employe.nom" name="employe" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Prenom</label>
+            <input type="text" [(ngModel)]="newConge.employe.prenom" name="employe" class="form-control">
+        </div> -->
+        
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Date début </label>
+            <input type="date" [(ngModel)]="newConge.dateDebut" name="dateDebut" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Date Fin </label>
+            <input type="date" [(ngModel)]="newConge.dateFin" name="dateFin" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Type de congé</label>
+            <input type="text" [(ngModel)]="newConge.typeCon" name="typeCon" class="form-control">
+        </div>
+        <div class="mt-2">
+            <button type="submit" class="btn btn-success" (click)="addConge()">Ajouter</button>
+        </div>
+
+    </form>
+</div>

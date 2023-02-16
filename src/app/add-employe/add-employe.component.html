@@ -1,0 +1,67 @@
+<div class="container">
+    <div>
+        <h2>Ajouter un Employe :</h2>
+    </div>
+    <form>
+        <div hidden   class="col-sm-4 col-md-4 col-lg-4">
+            <label>ID Employe</label>
+            <input type="number" [(ngModel)]="newEmploye.id" name="id" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>CIN </label>
+            <input type="text" [(ngModel)]="newEmploye.cin" name="cin" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Nom </label>
+            <input type="text" [(ngModel)]="newEmploye.nom" name="nom" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Prenom</label>
+            <input type="text" [(ngModel)]="newEmploye.prenom" name="prenom" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Date De Naissance</label>
+            <input type="date" [(ngModel)]="newEmploye.dateNai" name="dateNai" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>n° de Téléphone</label>
+            <input type="number" [(ngModel)]="newEmploye.tel" name="tel" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Adresse</label>
+            <input type="text" [(ngModel)]="newEmploye.adresse" name="adresse" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Email</label>
+            <input type="email" [(ngModel)]="newEmploye.email" name="email" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Date de Recructement</label>
+            <input type="date" [(ngModel)]="newEmploye.dateRecrutement" name="dateRecrutement" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Type Contrat</label>
+            <input type="text" [(ngModel)]="newEmploye.contrat" name="contrat" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Poste</label>
+            <select class="form-control form-control-lg" id="idPos" name="idPos"
+            [(ngModel)]="newIdPos">
+             <option *ngFor="let pos of postes" [value]="pos.idPos" >
+             {{pos.nomPos}}
+            </option>
+            </select>
+            </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Grade</label>
+            <input type="text" [(ngModel)]="newEmploye.grade" name="grade" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Salaire</label>
+            <input type="number" [(ngModel)]="newEmploye.salaire" name="salaire" class="form-control">
+        </div>
+        <div class="mt-2">
+            <button type="submit" class="btn btn-success" (click)="addEmploye()">Ajouter</button>
+        </div>
+    </form>
+</div>

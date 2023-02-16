@@ -1,0 +1,26 @@
+<div class="container">
+    <div>
+        <h2>Modifier un département :</h2>
+    </div>
+    <form>
+
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>ID</label>
+            <input type="text" [(ngModel)]="currentDepartement.idDep" name="idDep" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Nom </label>
+            <input type="text" [(ngModel)]="currentDepartement.nomDep" name="nomDep" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Description</label>
+            <input type="text" [(ngModel)]="currentDepartement.descriptionDep" name="descriptionDep" class="form-control">
+        </div>
+
+
+
+        <div class="mt-2">
+            <button type="submit" class="btn btn-success" (click)="updateDepartement()">Ajouter</button>
+        </div>
+    </form>
+</div>

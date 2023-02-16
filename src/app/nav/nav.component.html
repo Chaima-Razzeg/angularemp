@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html >
+<head>
+<meta charset="utf-8">
+<title>Gestion des ressources humaines</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+<!-- Brand -->
+<a class="navbar-brand"  routerLink="home">Gestion RH</a>
+<ul class="navbar-nav">
+
+    <!-- Links -->
+        <li class="nav-item">
+            <a  *ngIf="authService.isAdmin()" class="nav-link" routerLink="dashboard" >Tableau de bord</a>
+            </li>
+
+<!-- Dropdown -->
+<li class="nav-item dropdown">
+<a  *ngIf="authService.isAdmin()" class="nav-link dropdown-toggle"  id="navbardrop" data-toggle="dropdown">
+Employes
+</a>
+<div class="dropdown-menu">
+    <a class="dropdown-item" routerLink="employes">Lister</a>
+
+<a class="dropdown-item" routerLink="add-employe">Ajouter</a>
+<a class="dropdown-item" routerLink="rechercheParCin" >Rechercher</a>
+
+</div>
+</li>
+<li class="nav-item dropdown">
+    <a  *ngIf="authService.isAdmin()" class="nav-link dropdown-toggle"  id="navbardrop" data-toggle="dropdown">
+    Départements
+    </a>
+    <div class="dropdown-menu">
+        <a class="dropdown-item" routerLink="departements">Lister</a>
+
+    <a class="dropdown-item" routerLink="add-departement">Ajouter</a>
+    <a class="dropdown-item" routerLink="rechercheParNomDep" >Rechercher</a>
+
+
+    </div>
+    </li>
+    <li class="nav-item dropdown">
+        <a  *ngIf="authService.isAdmin()" class="nav-link dropdown-toggle"  id="navbardrop" data-toggle="dropdown">
+        Postes
+        </a>
+        <div class="dropdown-menu">
+            <a class="dropdown-item" routerLink="postes">Lister</a>
+
+        <a class="dropdown-item" routerLink="add-poste">Ajouter</a>
+        <a class="dropdown-item" routerLink="rechercheParNomPos" >Rechercher</a>
+
+        </div>
+        </li>
+        <li class="nav-item dropdown">
+            <a  *ngIf="authService.isAdmin()" class="nav-link dropdown-toggle"  id="navbardrop" data-toggle="dropdown">
+            Recrutement
+            </a>
+            <div class="dropdown-menu">
+            <a class="dropdown-item" routerLink="candEnAttente">Candidats en attentes</a>
+            <a class="dropdown-item" routerLink="candValide">Candidats validés</a>
+            </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a  *ngIf="authService.isAdmin()" class="nav-link dropdown-toggle"  id="navbardrop" data-toggle="dropdown">
+                 Congés
+                </a>
+                <div class="dropdown-menu">
+                <a class="dropdown-item" routerLink="congeAttente">Congés en attentes</a>
+                <a class="dropdown-item" routerLink="congeValide">Congés validés</a>
+                </div>
+                </li>
+    <!-- Links -->
+ <li class="nav-item">
+    <a *ngIf="authService.isUser()" class="nav-link" routerLink="demandeConge" >Demander Congé</a>
+ </li>
+ <li class="nav-item">
+    <a *ngIf="authService.isUser()" class="nav-link" routerLink="MesCongés" >Mes Congés</a>
+ </li>
+ <!--    <li class="nav-item">
+        <a class="nav-link" routerLink="postuler" >Postuler</a>
+        </li> -->
+</ul>
+
+
+
+<ul class="navbar-nav ml-auto">
+
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+            {{authService.loggedUser}}        </a>
+        <div class="dropdown-menu" >
+            <a *ngIf="!authService.isloggedIn" class="dropdown-item" routerLink = "login">Se connecter</a>
+            <a *ngIf="authService.isloggedIn"  class="dropdown-item" (click) = "onLogout()">Se déconnecter</a>
+            <a class="dropdown-item" href="#">Mon Profile</a>
+        </div>
+    </li>
+</ul>
+</nav>
+</body>
+</html>
+<router-outlet></router-outlet>
